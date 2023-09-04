@@ -1,2 +1,2 @@
 # end_project
-This is traning
+This is training
