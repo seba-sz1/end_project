@@ -6,12 +6,12 @@ jak funkcja przyjmie taką listę [1, 2, [3, 4, [5], [6]], 7, 8, 9] to ma zwróc
 def flatten_list(lst):
     end_list = []
     for i in lst:
-        if type(i) is int:
+        if isinstance(i, int):
             end_list.append(i)
-        elif type(i) is list:
-            end_list += flatten_list(i)
+        elif isinstance(i, list):
+            end_list.extend(flatten_list(i))
     return end_list
 
-# list1 = [1, 2, [3, 4, [5], [6]], 7, 8, 9]
-# list2 = flatten_list(list1)
-# print(list2)
+list1 = [1, 2, [3, [4, [5], [6]]], 7, 8, 9]
+list2 = flatten_list(list1)
+print(list2)
