@@ -8,10 +8,10 @@ def flatten_list(lst):
     for i in lst:
         if type(i) is int:
             end_list.append(i)
-        else:
-            flatten_list(i)
+        elif type(i) is list:
+            end_list += flatten_list(i)
     return end_list
 
-list1 = [1, 2, [3, 4, [5], [6]], 7, 8, 9]
-list2 = flatten_list(list1)
-print(list2)
+# list1 = [1, 2, [3, 4, [5], [6]], 7, 8, 9]
+# list2 = flatten_list(list1)
+# print(list2)
